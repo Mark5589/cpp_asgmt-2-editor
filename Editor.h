@@ -19,7 +19,7 @@
 
 class Editor {
 public:
-    enum class Command{p, n , perP , number, a, i, c, d, TEXT, sOldNew, Q ,unDefine};
+    enum class Command{p, n , perP , number, a, i, c, d, TEXT, sOldNew, Q ,unDefine, starter, stopWrite};
 
     /** : enum command : (all commands should be entered with lower case chars.)
  * P - print the current line
@@ -49,7 +49,7 @@ private:
     void commandI();
     void commandC();
     void commandD();
-//    void commandTEXT();
+    void commandTEXT(const std::string& s);
     void commandREPLACE(const std::string&);
 //    void commandQ();
 

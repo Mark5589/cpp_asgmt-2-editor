@@ -16,6 +16,7 @@ private:
 
 public:
     Document();
+    std::string getLineByIndex(const int&);
     void setCurrentLine(const int&);
     void incCurrentLine();
     void insertLineByIndex(const int&,const std::string&);

@@ -9,7 +9,7 @@
 
 Document::Document() {
     this->mCurrentLine = 0;
-    std::cout << "documetn counstruct" << std::endl;
+//    std::cout << "documetn counstruct" << std::endl;
 }
 
 void Document::setCurrentLine(const int & index) {
@@ -64,8 +64,6 @@ void Document::insertNewLine(const std::string& s, const int& place){
     int after = 1;
     if(place == after){ // append new string after the current.
         this->mDocumentStrings.insert(this->mDocumentStrings.begin() + getCurrentLine(), s);
-//        std::cout << this->mDocumentStrings.begin().operator*() << std::endl;
-//        std::cout << getCurrentLine() << std::endl;
         incCurrentLine();
 
     }else if(place == before){  // insert before the current line.
@@ -82,6 +80,11 @@ void Document::deleteCurrentElement() {
     this->mDocumentStrings.erase(this->mDocumentStrings.begin() + this->mCurrentLine - 1);
     if(this->mCurrentLine != 1) {this->mCurrentLine--;}
 
+}
+
+std::string Document::getLineByIndex(const int & i) {
+
+    return this->mDocumentStrings[i];
 }
 
 
